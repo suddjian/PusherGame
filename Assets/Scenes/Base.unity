@@ -301,7 +301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 5000000, guid: 0cdcd23b95cf2484e8c31d954d22f8bd, type: 2}
-  projectileForce: 200
+  projectileForce: 60
   fullAuto: 1
   autoRateOfFire: 3
   autoFireBurstLimit: -1
@@ -439,7 +439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 10
-  jumpPower: 20
+  jumpPower: 25
   groundCheck: {fileID: 1251786294}
 --- !u!50 &1251786292
 Rigidbody2D:
@@ -451,7 +451,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
-  m_GravityScale: 7
+  m_GravityScale: 1
   m_FixedAngle: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -540,7 +540,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1357125858}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.57784843, y: -.520717025, z: -1.19895625}
+  m_LocalPosition: {x: 8.55011368, y: -.520717144, z: -1.19895625}
   m_LocalScale: {x: 1.48696661, y: 1.48696744, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

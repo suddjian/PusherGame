@@ -11,11 +11,9 @@ public class GroundCheck : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other) {
 		grounded = true;
-		Debug.Log("Grounded");
 	}
 	
 	void OnTriggerExit2D(Collider2D other) {
 		grounded = false;
-		Debug.Log("Not Grounded");
 	}
 }
