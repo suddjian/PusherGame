@@ -1,10 +1,9 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Weapon : MonoBehaviour
 {
-
-	public Rigidbody2D projectile;
+	public Projectile projectile;
     public float projectileForce = 200;
 
 	public bool fullAuto = false;
@@ -21,7 +20,7 @@ public class Weapon : MonoBehaviour
 	{
 		// point at mouse
 		Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-		Utils.LookAt2D(transform, Utils.Vector2Convert(mousePos));
+		Utils.LookAt2D(transform, Utils.Vec3to2(mousePos));
 
 		if (Input.GetMouseButton(0)) {
             if (CanFire()) {
@@ -48,12 +47,13 @@ public class Weapon : MonoBehaviour
 
 	void Fire ()
 	{
-        Rigidbody2D bullet = (Rigidbody2D) Instantiate(projectile, transform.position, transform.rotation);
+        Projectile bullet = (Projectile) Instantiate(projectile, transform.position, transform.rotation);
         Vector3 initialV = Vector3.zero;
         if (rigidbody2D != null) {
             initialV = rigidbody2D.velocity;
         }
         //bullet.AddForce(bullet.transform.right * projectileForce); // this causes the bullet to move 10x slower on some systems for unknown reasons
-        bullet.rigidbody2D.velocity = bullet.transform.right * projectileForce + initialV;
+        bullet.velocity = transform.right * projectileForce + initialV;
+        CameraShake.Shake();
     }
 }
